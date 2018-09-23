@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xunit:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xunit="http://www.example.org/xunit" name="EvaluateCollectionOperationsTest4">
+  <testCase name="testCollectionAppend">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Sequence{'a', 'b'}->append('c')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b'}->append('c')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..4,0}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->append(0)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..4,4}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->append(4)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..5}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->append(5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..4,6}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->append(6)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1..4,0}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4}->append(0)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1,3,4,2}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4}->append(2)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1..5}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4}->append(5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1..4,6}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4}->append(6)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{'a', 'b', null}&quot;"/>
+      <action desc="&quot;Sequence{'a', 'b'}->append(null)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', null}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b'}->append(null)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{'a', null, 'b', null}&quot;"/>
+      <action desc="&quot;Sequence{'a', null, 'b'}->append(null)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', null}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', null, 'b'}->append(null)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{'1..2', null}&quot;"/>
+      <action desc="&quot;Sequence{'1..2'}->append(null)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'1..2', null}&quot;"/>
+      <action desc="&quot;OrderedSet{'1..2'}->append(null)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionAsBag">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Sequence{1, 2.0, '3'}->asBag()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Bag{1, 2.0, '3'}->asBag()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Set{1, 2.0, '3'}->asBag()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;OrderedSet{1, 2.0, '3'}->asBag()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionAsOrderedSet">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Sequence{1, 2.0, '3'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;OrderedSet{1, 2.0, '3'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;OrderedSet{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Set{1, 2.0, '3'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;OrderedSet{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Bag{1, 2.0, '3'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Sequence{'a', 'b', 'c', 'b'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'b', 'c', 'b'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Set{'a', 'b', 'c', 'b'}->asOrderedSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b', 'c', 'b'}->asOrderedSet()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionAsSequence">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Sequence{1, 2.0, '3'}->asSequence()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;OrderedSet{1, 2.0, '3'}->asSequence()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;Sequence{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Bag{1, 2.0, '3'}->asSequence()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;Sequence{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Set{1, 2.0, '3'}->asSequence()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionAsSet">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Sequence{1, 2.0, '3'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;Set{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Bag{1, 2.0, '3'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertResultContainsAll">
+      <expectedValue value="&quot;Set{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;Set{1, 2.0, '3'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{1, 2.0, '3'}&quot;"/>
+      <action desc="&quot;OrderedSet{1, 2.0, '3'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Sequence{'a', 'b', 'c', 'b'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'b', 'c', 'b'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Set{'a', 'b', 'c', 'b'}->asSet()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b', 'c', 'b'}->asSet()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionEqualOrderedXOrdered">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test'} = OrderedSet{4, 5, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 5} = Sequence{4, 5, 'test'}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test'} = Sequence{4, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test', 5} = Sequence{5, 4, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 5} = OrderedSet{4, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test'} = OrderedSet{5, 4, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 5} = Sequence{5, 4, 'test'}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test', 5} = Sequence{4, 5, 'test'}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test', 5} = OrderedSet{4, 5, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 5} = Sequence{4, 5, 'test', 5}&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionEqualOrderedXUnordered">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test'} = Set{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test', 4} = Bag{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 4} = Set{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 4} = Bag{4, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test', 4} = Set{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{4, 5, 'test'} = Bag{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{4, 5, 'test', 4} = Bag{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionEqualUnorderedXUnordered">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{4, 5, 'test'} = Set{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{4, 5, 'test', 4} = Bag{4, 'test', 5}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{4, 5, 'test', 4} = Set{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{4, 5, 'test'} = Bag{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{4, 5, 'test', 4} = Bag{4, 'test', 5, 4}&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionExcludes">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludes(3.5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludes(3.5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludes(3.5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludes(3.5)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionExcludesAll">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(Sequence{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(Bag{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(Set{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->excludesAll(OrderedSet{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(Sequence{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(Bag{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(Set{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->excludesAll(OrderedSet{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(Sequence{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(Bag{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(Set{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->excludesAll(OrderedSet{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(Sequence{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(Bag{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(Set{3.5, 'TEST'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->excludesAll(OrderedSet{3.5, 'TEST'})&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionExcluding">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'c'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b', 'c'}->excluding('b')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1,3,4}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->excluding(2)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1,3,4}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4}->excluding(2)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..3,6..9}&quot;"/>
+      <action desc="&quot;Sequence{1..4,6,7..9}->excluding(4)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1..3,6..9}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4,6,7..9}->excluding(4)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', null, 'b'}->excluding(null)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionFirst">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="1"/>
+      <action desc="&quot;Sequence{1, 2.0, '3'}->first()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="1"/>
+      <action desc="&quot;OrderedSet{1, 2.0, '3'}->first()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionIncludes">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includes(3)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includes('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includes(3.5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includes(3.5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includes(3.5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includes(3.5)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionIncludesAll">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(Sequence{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(Bag{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(Set{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(OrderedSet{3, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(Sequence{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(Bag{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(Set{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Sequence{3, 4.0, 'test'}->includesAll(OrderedSet{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(Sequence{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(Bag{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(Set{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Bag{3, 4.0, 'test'}->includesAll(OrderedSet{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(Sequence{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(Bag{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(Set{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;Set{3, 4.0, 'test'}->includesAll(OrderedSet{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(Sequence{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(Bag{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(Set{3.5, 'test'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;OrderedSet{3, 4.0, 'test'}->includesAll(OrderedSet{3.5, 'test'})&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionIncluding">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;Sequence{'a', 'b'}->including('c')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'a', 'b', 'c'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b'}->including('c')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{1..2,3..4}&quot;"/>
+      <action desc="&quot;OrderedSet{1..4}->including(4)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..2,3..4,4}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->including(4)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..5}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->including(5)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..3,4,6}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->including(6)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{1..4,0}&quot;"/>
+      <action desc="&quot;Sequence{1..4}->including(0)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionIntersection">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b'}&quot;"/>
+      <action desc="&quot;Set{'a', 'b', 'a'}->intersection(Set{'a', 'b', 'c'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b'}&quot;"/>
+      <action desc="&quot;Set{'a', 'b', 'a'}->intersection(Bag{'a', 'b', 'c'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a', 'b'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'b', 'a'}->intersection(Set{'a', 'b', 'c'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{'a', 'b'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'b', 'a'}->intersection(Bag{'a', 'b'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{'a', 'b'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'b'}->intersection(Bag{'a', 'b', 'a'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{'a', 'b'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'b', 'a'}->intersection(Bag{'a', 'b', 'c'})&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Bag{'a'}&quot;"/>
+      <action desc="&quot;Bag{'a', 'a', 'a', 'a'}->intersection(Bag{'a', 'b', 'b'})&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionMinus">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'b'}&quot;"/>
+      <action desc="&quot;Set{'a', 'b', 'c'} - Set{'c', 'a'}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'b'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b', 'c'} - Set{'c', 'a'}&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Set{'a'}&quot;"/>
+      <action desc="&quot;Set{'a', null} - Set{'c', null}&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionNotEmpty">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Sequence{4, 4, 'test'}->notEmpty()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Bag{4, 4, 'test'}->notEmpty()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;Set{4, 4, 'test'}->notEmpty()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;OrderedSet{4, 4, 'test'}->notEmpty()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'test'->notEmpty()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;''->notEmpty()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionPrepend">
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{'c', 'a', 'b'}&quot;"/>
+      <action desc="&quot;Sequence{'a', 'b'}->prepend('c')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{'c', 'a', 'b'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', 'b'}->prepend('c')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;Sequence{null, 'a', null, 'b'}&quot;"/>
+      <action desc="&quot;Sequence{'a', null, 'b'}->prepend(null)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryResults">
+      <expectedValue value="&quot;OrderedSet{null, 'a', 'b'}&quot;"/>
+      <action desc="&quot;OrderedSet{'a', null, 'b'}->prepend(null)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testCollectionSize">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="4"/>
+      <action desc="&quot;Sequence{4, 4, 5, 'test'}->size()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="4"/>
+      <action desc="&quot;Bag{4, 4, 5, 'test'}->size()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="4"/>
+      <action desc="&quot;Sequence{'a', 'b', null, null}->size()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="4"/>
+      <action desc="&quot;Bag{'a', 'b', null, null}->size()&quot;"/>
+    </assertion>
+  </testCase>
+</xunit:TestSuite>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xunit:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xunit="http://www.example.org/xunit" name="EvaluateBooleanOperationsTest4">
+  <testCase name="testBoolean">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;let b : Boolean = false in b&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;let b : Boolean = true in b&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanAnd">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;false and false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;false and true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;true and false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true and true&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanEqual">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;true = false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true = true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;false = false&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanImplies">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;false implies false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;false implies true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;true implies false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true implies true&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanNot">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;not false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;not true&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanNotEqual">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true &lt;> false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;true &lt;> true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;false &lt;> false&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanOr">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;false or false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;false or true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true or false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true or true&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testBooleanXor">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;false xor false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;false xor true&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;true xor false&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;true xor true&quot;"/>
+    </assertion>
+  </testCase>
+</xunit:TestSuite>

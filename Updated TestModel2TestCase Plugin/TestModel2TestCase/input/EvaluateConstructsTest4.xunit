@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xunit:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xunit="http://www.example.org/xunit" name="EvaluateConstructsTest4">
+  <testCase name="testConstruct_let">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="3"/>
+      <action desc="&quot;let a : Integer = 1 in a + 2&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="7"/>
+      <action desc="&quot;1 + let a : Integer = 2 in a * 3&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="4 / 2 + 5 * 3"/>
+      <action desc="&quot;4/2 + let a : Integer = 5 in a * 3&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="4 / 2 + 3 * 5 * 7"/>
+      <action desc="&quot;4/2 + (let a : Integer = 5 in 3 * (let b : Integer = 7 in a * b))&quot;"/>
+    </assertion>
+  </testCase>
+</xunit:TestSuite>

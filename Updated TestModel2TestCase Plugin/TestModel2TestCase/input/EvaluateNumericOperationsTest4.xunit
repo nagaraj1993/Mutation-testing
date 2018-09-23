@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xunit:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xunit="http://www.example.org/xunit" name="EvaluateNumericOperationsTest4">
+  <testCase name="testNumber">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="0"/>
+      <action desc="&quot;0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="3"/>
+      <action desc="&quot;3&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="3.1"/>
+      <action desc="&quot;3.1&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberAbs">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="3"/>
+      <action desc="&quot;3.abs()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="2147483647"/>
+      <action desc="&quot;2147483647.abs()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberDiv">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="1"/>
+      <action desc="&quot;3.div(2)&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="2"/>
+      <action desc="&quot;5.div(2)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberEqual">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;4 = 5&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;1 = 4.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;1.0 = 4&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;1.0 = 4.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;4 = 4&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;1.0 = 1&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;1.0 = 1.0&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberGreaterThan">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;3 > 2&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;3.0 > 2.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;3.0 > 3&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;3 > 3.0&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberGreaterThanOrEqual">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;3 >= 2&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;3.0 >= 3&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberLessThan">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;3 &lt; 2&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;3.0 &lt; 2.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;3 &lt; 3.0&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberLessThanOrEqual">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;3 &lt;= 2&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberMax">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="3"/>
+      <action desc="&quot;3.max(2)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberMin">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="2"/>
+      <action desc="&quot;3.min(2)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberMinus">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="0"/>
+      <action desc="&quot;1 - 1&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberMod">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="1"/>
+      <action desc="&quot;3.mod(2)&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberNotEqual">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;4 &lt;> 5&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;1 &lt;> 4.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;1.0 &lt;> 4&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;1.0 &lt;> 4.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;4 &lt;> 4&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;1 &lt;> 1.0&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;1.0 &lt;> 1&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberPlus">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="2"/>
+      <action desc="&quot;1 + 1&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testNumberTimes">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="1"/>
+      <action desc="&quot;1 * 1&quot;"/>
+    </assertion>
+  </testCase>
+</xunit:TestSuite>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xunit:TestSuite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xunit="http://www.example.org/xunit" name="EvaluateStringOperationsTest4">
+  <testCase name="testStringConcat">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;concatenationTest&quot;"/>
+      <action desc="&quot;'concatenation'.concat('Test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;concatenation\n&quot;"/>
+      <action desc="&quot;'concatenation'.concat('\\n')&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringEndsWith">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.endsWith('aabcdef')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.endsWith('abcdef')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.endsWith('cdef')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.endsWith('f')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.endsWith('')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;''.endsWith('')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;''.endsWith('a')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.endsWith('')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.endsWith('bcd')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.endsWith('ab')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.endsWith('a')&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringEqual">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'test' = 'se'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'test' = 'test'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'tESt' = 'TesT'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringEqualIgnoresCase">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'test'.equalsIgnoreCase('se')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'test'.equalsIgnoreCase('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'Test'.equalsIgnoreCase('tEst')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'tesT'.equalsIgnoreCase('teSt')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'TEST'.equalsIgnoreCase('test')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'test'.equalsIgnoreCase('TEST')&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringGreaterThan">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'3' > '4'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'a' > 'b'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'aardvark' > 'aardvarks'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'3.2' > '3.1'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'3' > '3'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'a' > 'a'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'aardvark' > 'aardvark'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringGreaterThanOrEqual">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'3' >= '4'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'a' >= 'b'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'aardvark' >= 'aardvarks'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'3.2' >= '3.1'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'3' >= '3'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'a' >= 'a'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'aardvark' >= 'aardvark'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringLessThan">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'3' &lt; '4'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'a' &lt; 'b'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'aardvark' &lt; 'aardvarks'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'3' &lt; '3'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'a' &lt; 'a'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'aardvark' &lt; 'aardvark'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringLessThanOrEqual">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'3' &lt;= '4'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'a' &lt;= 'b'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'aardvark' &lt;= 'aardvarks'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'3' &lt;= '3'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'a' &lt;= 'a'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'aardvark' &lt;= 'aardvark'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringNotEqual">
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'test' &lt;> 'se'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'test' &lt;> 'test'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringPlus">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;concatenationTest&quot;"/>
+      <action desc="&quot;'concatenation' + 'Test'&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;concatenation\n&quot;"/>
+      <action desc="&quot;'concatenation' + '\\n'&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringReplaceAll">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;rePlaceAll oPeration&quot;"/>
+      <action desc="&quot;'replaceAll operation'.replaceAll('p', 'P')&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringStartsWith">
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.startsWith('abcdefg')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.startsWith('abcdef')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.startsWith('abcd')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.startsWith('a')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.startsWith('')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;''.startsWith('')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;''.startsWith('a')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryTrue">
+      <action desc="&quot;'abcdef'.startsWith('')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.startsWith('bcd')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.startsWith('ef')&quot;"/>
+    </assertion>
+    <assertion type="assertQueryFalse">
+      <action desc="&quot;'abcdef'.startsWith('f')&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringToLowerCase">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;mixed&quot;"/>
+      <action desc="&quot;'MiXeD'.toLowerCase()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;upper&quot;"/>
+      <action desc="&quot;'UPPER'.toLowerCase()&quot;"/>
+    </assertion>
+  </testCase>
+  <testCase name="testStringToUpperCase">
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;MIXED&quot;"/>
+      <action desc="&quot;'MiXeD'.toUpperCase()&quot;"/>
+    </assertion>
+    <assertion type="assertQueryEquals">
+      <expectedValue value="&quot;LOWER&quot;"/>
+      <action desc="&quot;'lower'.toUpperCase()&quot;"/>
+    </assertion>
+  </testCase>
+</xunit:TestSuite>
