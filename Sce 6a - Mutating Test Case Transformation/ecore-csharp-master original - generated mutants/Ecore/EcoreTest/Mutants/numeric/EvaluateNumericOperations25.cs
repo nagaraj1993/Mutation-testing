@@ -78,17 +78,6 @@
 //        }
 
 //        [TestMethod]
-//        public void testNumberDiv_2()
-//        {
-//            // Arrangement
-//            var expectedResult = 2;
-//            // Action
-//            var actualResult = 5 / 2;
-//            // Assertion 
-//            ocl.assertQueryEquals(expectedResult, actualResult);
-//        }
-
-//        [TestMethod]
 //        public void testNumberEqual_1()
 //        {
 //            // Arrangement
@@ -303,7 +292,7 @@
 //            // Arrangement
 //            var expectedResult = 0;
 //            // Action
-//            var actualResult = 1 - 1;
+//            var actualResult = 1 + 1;
 //            // Assertion 
 //            ocl.assertQueryEquals(expectedResult, actualResult);
 //        }
@@ -413,7 +402,7 @@
 //            // Arrangement
 //            var expectedResult = 1;
 //            // Action
-//            var actualResult = 1 % 1;
+//            var actualResult = 1 * 1;
 //            // Assertion 
 //            ocl.assertQueryEquals(expectedResult, actualResult);
 //        }
