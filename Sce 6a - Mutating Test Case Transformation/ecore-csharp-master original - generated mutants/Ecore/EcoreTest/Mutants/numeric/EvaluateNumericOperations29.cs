@@ -171,7 +171,7 @@
 //            // Arrangement
 //            /* no arrangement part since it's a single paramteter assertion */
 //            // Action
-//            var actualResult = 3 > 2;
+//            var actualResult = 3 >= 2;
 //            // Assertion 
 //            ocl.assertQueryTrue(actualResult);
 //        }
@@ -204,7 +204,7 @@
 //            // Arrangement
 //            /* no arrangement part since it's a single paramteter assertion */
 //            // Action
-//            var actualResult = 3 > 3.0;
+//            var actualResult = 3 >= 3.0;
 //            // Assertion 
 //            ocl.assertQueryFalse(actualResult);
 //        }
@@ -413,7 +413,7 @@
 //            // Arrangement
 //            var expectedResult = 1;
 //            // Action
-//            var actualResult = 1 % 1;
+//            var actualResult = 1 * 1;
 //            // Assertion 
 //            ocl.assertQueryEquals(expectedResult, actualResult);
 //        }
