@@ -58,6 +58,32 @@
     <Compile Include="EvaluateConstructsTest4.cs" />
     <Compile Include="EvaluateNumericOperationsTest4.cs" />
     <Compile Include="EvaluateStringOperationsTest4.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations1.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations10a.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations12.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations13.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations16.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations17.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations18.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations21.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations6.cs" />
+    <Compile Include="Mutants\construct\EvaluateConstructs10b.cs" />
+    <Compile Include="Mutants\construct\EvaluateConstructs7.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations19.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations2.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations20.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations24.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations25.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations3.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations4.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations8.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations9.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations11.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations14.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations15.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations22.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations23.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations5.cs" />
     <Compile Include="OclTestmodel\MyClass.cs" />
     <Compile Include="OclTestmodel\MyClassBase.cs" />
     <Compile Include="OclTestmodel\MyClassImpl.cs" />
@@ -169,7 +195,9 @@
       <Name>Ecore</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mutants\collection\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
