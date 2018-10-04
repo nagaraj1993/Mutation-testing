@@ -12,7 +12,7 @@ using Ecore;
 
 namespace oclstdlib
 {
-    public class Set<T>:AbstractCollection<T>
+    public class Set<T> : AbstractCollection<T>
     {
 
         public Set(IEnumerable<T> enumerable) : base(enumerable)
@@ -25,14 +25,14 @@ namespace oclstdlib
 
         }
 
-        public Set(InternalEObject owner, int featureId):base(owner, featureId, NO_FEATURE)
+        public Set(InternalEObject owner, int featureId) : base(owner, featureId, NO_FEATURE)
         {
 
         }
 
-        public Set(InternalEObject owner, int featureId, int oppositeFeatureId): base(owner, featureId, oppositeFeatureId)
+        public Set(InternalEObject owner, int featureId, int oppositeFeatureId) : base(owner, featureId, oppositeFeatureId)
         {
-            
+
 
         }
 
@@ -44,7 +44,7 @@ namespace oclstdlib
 
 
 
-        public Set<Tuple<T,T2>> product<T2>(Collection<T2> collection)
+        public Set<Tuple<T, T2>> product<T2>(Collection<T2> collection)
         {
 
             var result = new Set<Tuple<T, T2>>();
@@ -52,10 +52,10 @@ namespace oclstdlib
             {
                 foreach (T2 second in collection)
                 {
-                    var tuple = new Tuple<T,T2>(first, second);
+                    var tuple = new Tuple<T, T2>(first, second);
 
                 }
-                
+
             }
             return result;
         }
@@ -81,7 +81,7 @@ namespace oclstdlib
 
         public virtual Set<T> intersection(Set<T> other)
         {
-                        
+
             return new Set<T>(this.Intersect(other));
         }
 
@@ -105,7 +105,7 @@ namespace oclstdlib
 
         }
 
-    
+
         public Set<T2> collect<T2>(Func<T, Collection<T2>> lambda)
         {
             var result = new Set<T2>();
