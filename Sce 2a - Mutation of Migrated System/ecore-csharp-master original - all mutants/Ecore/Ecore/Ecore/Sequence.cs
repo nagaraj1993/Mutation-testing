@@ -11,7 +11,7 @@ using System;
 
 namespace oclstdlib
 {
-    public class Sequence<T>:AbstractCollection<T>
+    public class Sequence<T> : AbstractCollection<T>
     {
 
 
@@ -25,14 +25,14 @@ namespace oclstdlib
 
         }
 
-        public Sequence(InternalEObject owner, int featureId):base(owner, featureId, NO_FEATURE)
+        public Sequence(InternalEObject owner, int featureId) : base(owner, featureId, NO_FEATURE)
         {
 
         }
 
-        public Sequence(InternalEObject owner, int featureId, int oppositeFeatureId): base(owner, featureId, oppositeFeatureId)
+        public Sequence(InternalEObject owner, int featureId, int oppositeFeatureId) : base(owner, featureId, oppositeFeatureId)
         {
-            
+
 
         }
 
@@ -167,7 +167,7 @@ namespace oclstdlib
             foreach (T item in thisCollection)
             {
                 var itemType = item.GetType();
-                               
+
 
                 if (itemType.IsSubclassOf(typeof(T2)) || itemType == typeof(T2))
                 {
@@ -239,7 +239,7 @@ namespace oclstdlib
         public Sequence<T> prependAll(Collection<T> collection)
         {
             var result = new Sequence<T>(collection);
-            
+
             foreach (T item in this)
             {
 
@@ -270,7 +270,7 @@ namespace oclstdlib
             //copy.RemoveAll(item => item == null);
 
             //int count = copy.Where(s => s != null && s.Equals(element)).Count();
-            
+
             //for (int i=0; i < count; i++)
             //{
             //    copy.remove(element);
@@ -313,7 +313,7 @@ namespace oclstdlib
 
         public virtual T last()
         {
-            return this.ElementAt(this.size()-1);
+            return this.ElementAt(this.size() - 1);
         }
 
         public virtual int indexOf(T item)

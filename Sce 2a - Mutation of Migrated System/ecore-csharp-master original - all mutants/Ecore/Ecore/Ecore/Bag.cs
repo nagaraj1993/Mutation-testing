@@ -12,7 +12,7 @@ using Ecore;
 
 namespace oclstdlib
 {
-    public class Bag<T>:AbstractCollection<T>
+    public class Bag<T> : AbstractCollection<T>
     {
 
 
@@ -26,14 +26,14 @@ namespace oclstdlib
 
         }
 
-        public Bag(InternalEObject owner, int featureId):base(owner, featureId, NO_FEATURE)
+        public Bag(InternalEObject owner, int featureId) : base(owner, featureId, NO_FEATURE)
         {
 
         }
 
-        public Bag(InternalEObject owner, int featureId, int oppositeFeatureId): base(owner, featureId, oppositeFeatureId)
+        public Bag(InternalEObject owner, int featureId, int oppositeFeatureId) : base(owner, featureId, oppositeFeatureId)
         {
-            
+
 
         }
         public Set<Tuple<T, T2>> product<T2>(Collection<T2> collection)

@@ -146,6 +146,8 @@
     <Compile Include="Ecore\Switch.cs" />
     <Compile Include="Ecore\TreeIterator.cs" />
     <Compile Include="Ecore\UnlimitedNatural.cs" />
+    <Compile Include="Mutants\Bag\Bag27.cs" />
+    <Compile Include="Mutants\Bag\Bag26.cs" />
     <Compile Include="Mutants\Generic\AbstractCollection10.cs" />
     <Compile Include="Mutants\Generic\AbstractCollection11.cs" />
     <Compile Include="Mutants\Generic\AbstractCollection12.cs" />
@@ -158,25 +160,26 @@
     <Compile Include="Mutants\Generic\AbstractCollection7.cs" />
     <Compile Include="Mutants\Generic\AbstractCollection8.cs" />
     <Compile Include="Mutants\Generic\AbstractCollection9.cs" />
-    <Compile Include="Mutants\Generic\AbstractCollectionMutant2.cs" />
-    <Compile Include="Mutants\Generic\AbstractCollectionMutant3.cs" />
-    <Compile Include="Mutants\Generic\AbstractCollectionMutant4.cs" />
+    <Compile Include="Mutants\Generic\AbstractCollection2.cs" />
+    <Compile Include="Mutants\Generic\AbstractCollection3.cs" />
+    <Compile Include="Mutants\Generic\AbstractCollection4.cs" />
     <Compile Include="Mutants\OrderedSet\OrderedSet14.cs" />
     <Compile Include="Mutants\OrderedSet\OrderedSet16.cs" />
     <Compile Include="Mutants\OrderedSet\OrderedSet18.cs" />
     <Compile Include="Mutants\OrderedSet\OrderedSet23.cs" />
     <Compile Include="Mutants\OrderedSet\OrderedSet24.cs" />
-    <Compile Include="Mutants\OrderedSet\OrderedSetMutant1.cs" />
-    <Compile Include="Mutants\OrderedSet\OrderedSetMutant6.cs" />
+    <Compile Include="Mutants\OrderedSet\OrderedSet1.cs" />
+    <Compile Include="Mutants\OrderedSet\OrderedSet6.cs" />
+    <Compile Include="Mutants\Sequence\Sequence29.cs" />
+    <Compile Include="Mutants\Sequence\Sequence28.cs" />
     <Compile Include="Mutants\Sequence\Sequence17.cs" />
-    <Compile Include="Mutants\Sequence\SequenceMutant5.cs" />
+    <Compile Include="Mutants\Sequence\Sequence5.cs" />
+    <Compile Include="Mutants\Set\Set30.cs" />
     <Compile Include="Mutants\Set\Set25.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Xmi\XmiResource.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mutants\Bag\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
