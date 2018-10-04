@@ -1,0 +1,5 @@
+C:\Users\a.balasubramanian\Documents\GitHub\Mutation\Sce 4 - Mutation of Old Test Cases\ecore-csharp-master original - generated mutants\Ecore\Ecore\bin\Debug\Ecore.dll
+C:\Users\a.balasubramanian\Documents\GitHub\Mutation\Sce 4 - Mutation of Old Test Cases\ecore-csharp-master original - generated mutants\Ecore\Ecore\bin\Debug\Ecore.pdb
+C:\Users\a.balasubramanian\Documents\GitHub\Mutation\Sce 4 - Mutation of Old Test Cases\ecore-csharp-master original - generated mutants\Ecore\Ecore\obj\Debug\Ecore.csprojResolveAssemblyReference.cache
+C:\Users\a.balasubramanian\Documents\GitHub\Mutation\Sce 4 - Mutation of Old Test Cases\ecore-csharp-master original - generated mutants\Ecore\Ecore\obj\Debug\Ecore.dll
+C:\Users\a.balasubramanian\Documents\GitHub\Mutation\Sce 4 - Mutation of Old Test Cases\ecore-csharp-master original - generated mutants\Ecore\Ecore\obj\Debug\Ecore.pdb
