@@ -60,6 +60,7 @@
     <Compile Include="EvaluateStringOperationsTest4.cs" />
     <Compile Include="Mutants\bool\EvaluateBooleanOperations23.cs" />
     <Compile Include="Mutants\bool\EvaluateBooleanOperations9.cs" />
+    <Compile Include="Mutants\bool\EvaluateBooleanOperations28.cs" />
     <Compile Include="Mutants\collection\EvaluateCollectionOperations1.cs" />
     <Compile Include="Mutants\collection\EvaluateCollectionOperations10.cs" />
     <Compile Include="Mutants\collection\EvaluateCollectionOperations11.cs" />
@@ -81,8 +82,12 @@
     <Compile Include="Mutants\collection\EvaluateCollectionOperations6.cs" />
     <Compile Include="Mutants\collection\EvaluateCollectionOperations7.cs" />
     <Compile Include="Mutants\collection\EvaluateCollectionOperations8.cs" />
+    <Compile Include="Mutants\construct\EvaluateConstructs27.cs" />
+    <Compile Include="Mutants\construct\EvaluateConstructs26.cs" />
     <Compile Include="Mutants\numeric\EvaluateNumericOperations25.cs" />
+    <Compile Include="Mutants\numeric\EvaluateNumericOperations29.cs" />
     <Compile Include="Mutants\string\EvaluateStringOperations24.cs" />
+    <Compile Include="Mutants\string\EvaluateStringOperations30.cs" />
     <Compile Include="OclTestmodel\MyClass.cs" />
     <Compile Include="OclTestmodel\MyClassBase.cs" />
     <Compile Include="OclTestmodel\MyClassImpl.cs" />
@@ -194,9 +199,7 @@
       <Name>Ecore</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mutants\construct\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
